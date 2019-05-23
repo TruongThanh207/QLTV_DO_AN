@@ -11,12 +11,13 @@ namespace QuanLyThuVien.DTO
     {
         public string MaLDG { get; set; }
         public string TenLDG { get; set; }
-
+        public LoaiDocGiaDTO() { }
         public LoaiDocGiaDTO(DataRow row)
         {
             MaLDG = (string)row["MaLDG"];
-            TenLDG = (string)row["TenLDG"];  
+            TenLDG = (string)row["TenLDG"];
+
         }
     }
-   
+    
 }

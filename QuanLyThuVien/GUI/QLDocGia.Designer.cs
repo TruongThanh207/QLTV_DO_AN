@@ -78,10 +78,8 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -130,7 +128,7 @@
             this.txtEmail.BackColor = System.Drawing.Color.White;
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.ForeColor = System.Drawing.Color.Gray;
+            this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.Location = new System.Drawing.Point(467, 106);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(163, 16);
@@ -142,7 +140,7 @@
             this.txtMaDG.BackColor = System.Drawing.Color.White;
             this.txtMaDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMaDG.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaDG.ForeColor = System.Drawing.Color.Gray;
+            this.txtMaDG.ForeColor = System.Drawing.Color.Black;
             this.txtMaDG.Location = new System.Drawing.Point(133, 10);
             this.txtMaDG.Name = "txtMaDG";
             this.txtMaDG.Size = new System.Drawing.Size(163, 16);
@@ -207,19 +205,21 @@
             // 
             // txtNgayLapThe
             // 
+            this.txtNgayLapThe.CalendarTrailingForeColor = System.Drawing.SystemColors.Desktop;
             this.txtNgayLapThe.CustomFormat = "dd/MM/yyyy";
             this.txtNgayLapThe.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txtNgayLapThe.Location = new System.Drawing.Point(467, 149);
             this.txtNgayLapThe.Name = "txtNgayLapThe";
             this.txtNgayLapThe.Size = new System.Drawing.Size(163, 21);
             this.txtNgayLapThe.TabIndex = 23;
+            this.txtNgayLapThe.ValueChanged += new System.EventHandler(this.txtNgayLapThe_ValueChanged);
             // 
             // txtDiaChi
             // 
             this.txtDiaChi.BackColor = System.Drawing.Color.White;
             this.txtDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDiaChi.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiaChi.ForeColor = System.Drawing.Color.Gray;
+            this.txtDiaChi.ForeColor = System.Drawing.Color.Black;
             this.txtDiaChi.Location = new System.Drawing.Point(467, 57);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(163, 16);
@@ -228,6 +228,7 @@
             // 
             // dtNgaySinh
             // 
+            this.dtNgaySinh.CalendarTrailingForeColor = System.Drawing.SystemColors.Desktop;
             this.dtNgaySinh.CustomFormat = "dd/MM/yyyy";
             this.dtNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtNgaySinh.Location = new System.Drawing.Point(467, 12);
@@ -319,7 +320,7 @@
             this.txtTenDG.BackColor = System.Drawing.Color.White;
             this.txtTenDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTenDG.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenDG.ForeColor = System.Drawing.Color.Gray;
+            this.txtTenDG.ForeColor = System.Drawing.Color.Black;
             this.txtTenDG.Location = new System.Drawing.Point(133, 56);
             this.txtTenDG.Name = "txtTenDG";
             this.txtTenDG.Size = new System.Drawing.Size(163, 16);
@@ -365,13 +366,14 @@
             this.txtTongNo.BackColor = System.Drawing.Color.White;
             this.txtTongNo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTongNo.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTongNo.ForeColor = System.Drawing.Color.Gray;
+            this.txtTongNo.ForeColor = System.Drawing.Color.Black;
             this.txtTongNo.Location = new System.Drawing.Point(131, 82);
             this.txtTongNo.Name = "txtTongNo";
             this.txtTongNo.ReadOnly = true;
             this.txtTongNo.Size = new System.Drawing.Size(163, 16);
             this.txtTongNo.TabIndex = 15;
             this.txtTongNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTongNo.Click += new System.EventHandler(this.txtTongNo_Click);
             // 
             // label11
             // 
@@ -436,6 +438,7 @@
             this.btnLuu.Size = new System.Drawing.Size(107, 34);
             this.btnLuu.TabIndex = 7;
             this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoa
             // 
@@ -463,6 +466,7 @@
             this.btnXoa.Size = new System.Drawing.Size(107, 34);
             this.btnXoa.TabIndex = 6;
             this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -490,6 +494,7 @@
             this.btnSua.Size = new System.Drawing.Size(107, 34);
             this.btnSua.TabIndex = 4;
             this.btnSua.Text = "Sửa";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -518,6 +523,7 @@
             this.btnThem.Size = new System.Drawing.Size(107, 34);
             this.btnThem.TabIndex = 3;
             this.btnThem.Text = "Thêm";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // panel1
             // 
@@ -552,9 +558,11 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1164, 347);
             this.panel2.TabIndex = 6;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // gridDocGia
             // 
+            this.gridDocGia.AllowRestoreSelectionAndFocusedRow = DevExpress.Utils.DefaultBoolean.True;
             this.gridDocGia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridDocGia.Location = new System.Drawing.Point(0, 0);
             this.gridDocGia.MainView = this.grvDocGia;
@@ -563,6 +571,7 @@
             this.gridDocGia.TabIndex = 0;
             this.gridDocGia.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvDocGia});
+            this.gridDocGia.Click += new System.EventHandler(this.gridDocGia_Click);
             // 
             // grvDocGia
             // 
@@ -579,6 +588,8 @@
             this.TongNo});
             this.grvDocGia.GridControl = this.gridDocGia;
             this.grvDocGia.Name = "grvDocGia";
+            this.grvDocGia.OptionsBehavior.Editable = false;
+            this.grvDocGia.OptionsSelection.MultiSelect = true;
             this.grvDocGia.OptionsView.ShowGroupPanel = false;
             // 
             // MaDG
@@ -665,12 +676,9 @@
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
-            this.groupControl2.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

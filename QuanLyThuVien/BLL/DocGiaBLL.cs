@@ -57,5 +57,43 @@ namespace QuanLyThuVien.BLL
         {
             return DocGiaDAL.Instance.GetTongNo(maDG);
         }
+        public string DeleteDocGia(string Ma)
+        {
+            
+            if (DocGiaDAL.Instance.DeleteDocGia(Ma))
+                return "Xóa thành công!";
+            else
+                return "Xóa thất bại! Có lỗi xảy ra.";
+        }
+        public string SaveDocGia(string Ma, string Ten, string LDG, DateTime NS, string DiaChi, string Email, DateTime NLT, DateTime NHH, string TTT, string TN)
+        {
+            //kiểm tra điều kiện
+            if (Ma == "" || Ten == "" || LDG == null || DiaChi == "" || Email == "" )
+                return "Thêm thất bại! Các trường không được bỏ trống!";
+
+            // lưu xuống CSDL
+
+            if (DocGiaDAL.Instance.SaveDocGia(Ma, Ten, LDG, NS.ToString(), DiaChi, Email, NLT.ToString(), NHH.ToString(), TTT.ToString(), TN))
+                return "Thêm thành công!";
+            else
+                return "Thêm thất bại! Có lỗi xảy ra.";
+
+        }
+        public string UpdateDocGia(string Ma, string Ten, string LDG, DateTime NS, string DiaChi, string Email, DateTime NLT, DateTime NHH, string TTT, string TN)
+        {
+            //kiểm tra điều kiện
+            if (Ma == "" || Ten == "" || LDG == null || DiaChi == "" || Email == "")
+                return "Sửa thất bại! Các trường không được bỏ trống!";
+
+            // lưu xuống CSDL
+
+            if (DocGiaDAL.Instance.UpdateDocGia(Ma, Ten, LDG, NS.ToString(), DiaChi, Email, NLT.ToString(), NHH.ToString(), TTT, TN))
+                return "Sửa thành công!";
+            else
+                return "Sửa thất bại! Có lỗi xảy ra.";
+
+        }
+
+
     }
 }

@@ -40,7 +40,7 @@ namespace QuanLyThuVien.BLL
         public DataTable ShowTheLoaiToCombobox()
         {
             DataTable data = TheLoaiDAL.Instance.LoadTheLoaiToComboBox();
-            return data;
+           return data;
         }
     }
 }

@@ -89,7 +89,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(447, 151);
             this.panel3.TabIndex = 0;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // btnLuu
             // 
@@ -118,6 +117,7 @@
             this.btnLuu.Size = new System.Drawing.Size(107, 34);
             this.btnLuu.TabIndex = 5;
             this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoa
             // 
@@ -145,6 +145,7 @@
             this.btnXoa.Size = new System.Drawing.Size(107, 34);
             this.btnXoa.TabIndex = 4;
             this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -173,7 +174,7 @@
             this.btnThem.Size = new System.Drawing.Size(107, 34);
             this.btnThem.TabIndex = 2;
             this.btnThem.Text = "Thêm";
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -201,6 +202,7 @@
             this.btnSua.Size = new System.Drawing.Size(107, 34);
             this.btnSua.TabIndex = 3;
             this.btnSua.Text = "Sửa";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // groupControl1
             // 
@@ -242,7 +244,7 @@
             this.txtMaLDG.BackColor = System.Drawing.Color.White;
             this.txtMaLDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMaLDG.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaLDG.ForeColor = System.Drawing.Color.Gray;
+            this.txtMaLDG.ForeColor = System.Drawing.Color.Black;
             this.txtMaLDG.Location = new System.Drawing.Point(259, 31);
             this.txtMaLDG.Name = "txtMaLDG";
             this.txtMaLDG.Size = new System.Drawing.Size(206, 22);
@@ -266,7 +268,7 @@
             this.txtTenLDG.BackColor = System.Drawing.Color.White;
             this.txtTenLDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTenLDG.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenLDG.ForeColor = System.Drawing.Color.Gray;
+            this.txtTenLDG.ForeColor = System.Drawing.Color.Black;
             this.txtTenLDG.Location = new System.Drawing.Point(259, 83);
             this.txtTenLDG.Name = "txtTenLDG";
             this.txtTenLDG.Size = new System.Drawing.Size(206, 22);
@@ -300,6 +302,7 @@
             // 
             // gridLDG
             // 
+            this.gridLDG.AllowRestoreSelectionAndFocusedRow = DevExpress.Utils.DefaultBoolean.True;
             this.gridLDG.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridLDG.Location = new System.Drawing.Point(0, 67);
             this.gridLDG.MainView = this.grvLDG;
@@ -308,6 +311,7 @@
             this.gridLDG.TabIndex = 12;
             this.gridLDG.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grvLDG});
+            this.gridLDG.Click += new System.EventHandler(this.gridLDG_Click);
             // 
             // grvLDG
             // 
@@ -316,6 +320,8 @@
             this.TenLDG});
             this.grvLDG.GridControl = this.gridLDG;
             this.grvLDG.Name = "grvLDG";
+            this.grvLDG.OptionsBehavior.Editable = false;
+            this.grvLDG.OptionsSelection.MultiSelect = true;
             this.grvLDG.OptionsView.ShowGroupPanel = false;
             // 
             // MaLDG

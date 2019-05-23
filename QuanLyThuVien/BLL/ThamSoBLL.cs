@@ -74,6 +74,7 @@ namespace QuanLyThuVien.BLL
                 return "Thẻ đọc giả đã hết hạn!";
             }
 
+
             //kiểm tra không có sách mượn quá hạn
 
             //load tất cả mã phiếu mượn theo mã đọc giả
@@ -99,6 +100,11 @@ namespace QuanLyThuVien.BLL
         {
 
             return ShowThamSo().TienPhatMotNgay;
+        }
+        public int ThoiHanThe()
+        {
+            ThamSoDTO tht = ShowThamSo();
+            return tht.ThoiHanThe;
         }
     }
 }

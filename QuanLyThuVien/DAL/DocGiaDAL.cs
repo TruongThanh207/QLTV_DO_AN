@@ -93,6 +93,62 @@ namespace QuanLyThuVien.DAL
             } catch { return -1; }
             return ret;
         }
+        public bool DeleteDocGia(string Ma)
+        {
+            //string query = "USP_DELETEBOOK @Ma";
+            //int ret = DatabaseAcess.Instance.ExecuteNonQuery(query, new object[] { Ma});
+
+            string query = "delete from DOCGIA where MaDG ='" + Ma + "'";
+            int ret = DatabaseAcess.Instance.ExecuteNonQuery(query);
+
+            if (ret > 0)
+                return true;
+            else
+                return false;
+        }
+        public bool SaveDocGia(string Ma, string Ten, string LDG, string NS, string DiaChi, string Email, string NLT, string NHH, string TTT, string TN)
+        {
+            double tn = Convert.ToDouble(TN);
+            DateTime ns = Convert.ToDateTime(NS);
+            DateTime nlt = Convert.ToDateTime(NLT);
+            DateTime nhh = Convert.ToDateTime(NHH);
+            bool tinhtrang;
+            if (TTT == "True")
+                tinhtrang = true;
+            else
+                tinhtrang = false;
+
+            string query = "USP_SAVEDOCGIA @MaDG , @TenDG , @MaLDG , @NgaySinh , @DiaChi , @Email , @NgayLapThe , @NgayHetHan , @TinhTrangThe , @TongNo";
+
+            int ret = DatabaseAcess.Instance.ExecuteNonQuery(query, new object[] { Ma, Ten, LDG, ns, DiaChi, Email, nlt, nhh, tinhtrang, tn });
+            //int ret = DatabaseAcess.Instance.ExecuteNonQuery("insert into DOCGIA values('DG004','A','LDG001','2/2/1999','B','C','2/2/2019','8/2/1999','True',1000)");
+            if (ret > 0)
+                return true;
+            else
+                return false;
+        }
+        public bool UpdateDocGia(string Ma, string Ten, string LDG, string NS, string DiaChi, string Email, string NLT, string NHH, string TTT, string TN)
+        {
+            double tn = Convert.ToDouble(TN);
+            DateTime ns = Convert.ToDateTime(NS);
+            DateTime nlt = Convert.ToDateTime(NLT);
+            DateTime nhh = Convert.ToDateTime(NHH);
+            bool tinhtrang;
+            if (TTT == "True")
+                tinhtrang = true;
+            else
+                tinhtrang = false;
+
+            string query = "USP_UPDATEDOCGIA @MaDG , @TenDG , @MaLDG , @NgaySinh , @DiaChi , @Email , @NgayLapThe , @NgayHetHan , @TinhTrangThe , @TongNo";
+
+            int ret = DatabaseAcess.Instance.ExecuteNonQuery(query, new object[] { Ma, Ten, LDG, ns, DiaChi, Email, nlt, nhh, tinhtrang, tn });
+            //int ret = DatabaseAcess.Instance.ExecuteNonQuery("insert into SACH values('S010','ach','TL001','TG001',2019,'io',2/2/2019,12000,'True','Không có ảnh')"); 
+            if (ret > 0)
+                return true;
+            else
+                return false;
+        }
+
         #endregion
     }
 }
